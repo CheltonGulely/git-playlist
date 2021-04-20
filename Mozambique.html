@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ola mundo!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: #000;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: 'Roboto',sans-serif;
+        }
+        
+        .container p{
+            width: 500px;
+            color: white;
+        }   
+                
+        .text h1{
+            font-size: 70px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        h1 span{
+            color: white;
+        }
+        h1 span:hover{
+            filter: blur(1px);
+        }
+        .text h1::before,
+        .text h1::after{
+            position: absolute;
+            content: attr(data-content);
+            top: 12%;
+            left: 0%;
+            visibility: hidden;
+        }
+        .text:hover h1::before,
+        .text:hover h1::after{
+            visibility: visible;
+        }
+        .text:hover h1::before{
+            color: rgba(255, 0, 188, .8);
+            animation: glitch 5s cubic-bezier(.25,.46,.45,.94) both ;
+        }
+        .text:hover h1::after{
+            color: rgba(0, 255, 255, .8);
+            animation: glitch .3s cubic-bezier(.25,.46,.45,.94) reverse both ;
+        }
+        @keyframes glitch {
+            0%{
+                transform: translate(0);
+            }
+            20%{
+                transform: translate(-3px,3px);
+            }
+            40%{
+                transform: translate(-3px,-3px);
+            }
+            60%{
+                transform: translate(3px,3px);
+            }
+            80%{
+                transform: translate(3px,-3px);
+            }
+            100%{
+                transform: translate(0);
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1 data-content="Greetings from Mozambique!"><span>Greetings from Mozambique!</span></h1>
+            <p>I'm just amazed by the content of this playlist, I think that every programmer that doesn't know git and GitHub must know this playlist!</p>
+        </div>
+    </div>
+</body>
+</html>
